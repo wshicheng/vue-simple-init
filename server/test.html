@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="index.css">
+    <script type="text/javascript"  async="true" defer src="require.js"></script>
+    <script src="require.js" data-main="china"></script>
+</head>
+<body>
+        <div class="index">
+            test页面
+        </div>
+</body>
+<script>
+    require(['test'],function(Map){
+      var map = new Map()
+      console.log(map)
+      map.put('太亮','sb')
+      console.log(map)
+      map.remove('太亮')
+      console.log(map)
+    })
+</script>
+</html>
