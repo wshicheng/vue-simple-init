@@ -1,0 +1,18 @@
+{
+  "name": "12.26",
+  "version": "1.0.0",
+  "description": "node description",
+  "main": "06_module.js",
+  "directories": {
+    "test": "test"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "silly-datetime": "^0.1.2"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}

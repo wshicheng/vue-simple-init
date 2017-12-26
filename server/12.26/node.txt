@@ -1,0 +1,31 @@
+特别强调
+    require（nodeJS是Common.js规范）
+    和requireJS(AMD规范) 没有关联
+模块
+    一般一个js文件一个模块，而多个js文件之间可以相互require
+    共同实现了一个大功能
+    在nodeJS中，一个Javascript定义的变量或函数都只在当前文件内有效
+    可以把每个js文件都看成闭包结构，当需要从此js文件外包引用这些变量或者函数时候，必须实用module.export = 进行对象的暴露
+    而调用者需要实用require来引入js文件
+node_modules: 
+    这个文件夹并不一定在同级目录里面，在上一级或者上上一级 都是可以的 
+    作用： 一般都是用作存储项目需要引入的模块，同时也是用作管理模块
+    代码不建议写在node_modules文件夹下，原因是node_modules文件夹是自动生成的
+    其次在项目发布的时候，我们并不会把node_modules这个文件夹发布
+    而且我们打包的时候也会过滤掉这个文件夹（这个文件夹名字是固定的）
+NPM：
+    全称：Node Package Manager
+    这个npm无需下载，下载node的时候自带npm工具 
+    NPM 初始 npm init
+    npm install express --save-dev 可以简写为 npm i express -D
+Post请求
+    相比get请求，post请求稍微麻烦一点，nodeJS认为，使用post请求一般是数据量相对get而言较多
+    ，为了追求效率，把数据拆分成了多个小的数据模块（chunk，然后通过特定的事件把这些小数据模块，有序的传递给回调函数）
+加载文件为例：读取大文件，就会时间越久，而小文件自然就很快
+        比喻：如果门宽度为1米，人1m则只能过1人 如果人50cm则可以过2人
+form表单 enctype 两种方式默认是 enctype="application/x-www-form-urlencoded"  
+         另外一种 enctype="multipart/form-data"
+需要熟悉的知识：
+formidable:https://www.npmjs.com/package/formidable
+querystring:https://www.npmjs.com/package/querystring  
+util:inspect(util.inspect)  
