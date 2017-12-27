@@ -1,0 +1,7 @@
+Get请求：在URL上传参
+文件上传：
+1.必须是表单，设置 enctype="multipart/form-data" 和input的name
+2.设置上传目录
+3.rename修改文件名称
+EJS:是一个javascript模块库，是用来从json数据中生成html字符串 学习成本低，简单易用
+Jade的性能比ejs要高
