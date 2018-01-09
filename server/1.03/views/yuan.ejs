@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>open PDF</title>
+</head>
+
+<body>
+    <h1>PDF2Image</h1>
+    <input type="file" name="file" id="file" />
+    <img id="preview" src="" alt="" srcset="" />
+    <embed id="embed" src="" width="200" height="200"></embed>
+</body>
+<script>
+    var $file = document.getElementById('file')
+    $file.onchange = function () {
+        var file = this.files[0]
+        var fr = new FileReader()
+        fr.onloadstart = function () {
+            console.log(this)
+        }
+        fr.onprogress = function () {
+            console.log(this)
+        }
+        fr.onload = function () {
+            console.log(this)
+        }
+        fr.onloadend = function () {
+            var blob = dataURLtoBlob(this.result)
+            console.log(blob)
+            var url = URL.createObjectURL(blob)
+            document.getElementById('preview').src = url
+            // document.getElementById('embed').src = url
+            // var blob = new Blob([this.result])
+            // var url = URL.createObjectURL(blob)
+            // document.getElementById('preview').src = url
+        }
+        fr.readAsDataURL(file)
+        //fr.readAsArrayBuffer(file)
+        //fr.readAsBinaryString(file)
+    }
+    // base64 转 blob
+    function dataURLtoBlob(dataurl) {
+        var arr = dataurl.split(','),
+            mime = arr[0].match(/:(.*?);/)[1],
+            bstr = atob(arr[1]),
+            n = bstr.length,
+            u8arr = new Uint8Array(n);
+
+        while (n--) {
+            u8arr[n] = bstr.charCodeAt(n);
+        }
+        //return new Blob([u8arr], {type:'application/pdf'});//用blob生成pdf文件,返回PDF文件
+        console.log(u8arr)
+        return new Blob([u8arr], {
+            type: mime
+        });
+    }
+    //保存或下载文件
+    function downFile(blob, fileName) { //blob就是一中返回的文件,fileName是下载文件名
+        if (window.navigator.msSaveOrOpenBlob) { //msSaveOrOpenBlob方法返回bool值
+            navigator.msSaveBlob(blob, fileName); //本地保存
+        } else {
+            var link = document.createElement('a'); //a标签下载
+            link.href = window.URL.createObjectURL(blob);
+            link.download = fileName;
+            link.click();
+            window.URL.revokeObjectURL(link.href);
+        }
+    }
+</script>
+
+</html>

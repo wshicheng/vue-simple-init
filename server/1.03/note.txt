@@ -1,0 +1,29 @@
+Express是什么？
+是一个开源的Node.js 项目框架（不属于原生js阵营）
+初学者实用express可以快捷搭建一个web项目，express中已集成了Web的Http服务器创建，文件管理，及session的处理功能
+所以express是非常适合初学者入门学习的
+Express热度和jquery一样
+原生Node的弊端
+1，呈递静态资源非常不方便,而且还有304出现
+    304 代表加载的是缓存
+2. 路由处理非常不直观，而且难看。如果需要特殊的处理，必须写正则表达式或者字符串函数
+3.不能集中精力去把时间放在写业务上，还需要考虑很多客观因素（市面上的框架都是帮助我们解决代码层的问题，而让开发者停留在业务层/逻辑层）
+Express 优势
+1.代码少
+2.功能较为健全
+3.会精良减少干预，让开发者充分表达自己的思想，同时提供一些有用的东西，和NodeJs关系类似js和Jquery
+Express 中文：http://expressjs.com/zh-cn/
+方法1
+npm init
+npm install express --save
+查看版本 pm info express --version
+安装指定版本 npm install express@3.0.0 
+使用Express
+App.js 入口文件，express 推荐使用app.js 为入口文件
+Public 静态资源存为 css/js/img
+Routes 存放路由
+Views 存放模板
+package.json 依赖
+防止路由冲突 的办法：中间件的顺序其实都非常之重要
+1.调整路由位置
+2.使用next（）方法转移到下个路由

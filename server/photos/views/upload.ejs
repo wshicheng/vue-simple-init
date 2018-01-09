@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="/index.css">
+    <link rel="stylesheet" href="//at.alicdn.com/t/font_397862_bo98w2izazlu9pb9.css">
+</head>
+<body>
+    <h3><a href="/">首页</a><span>&gt;</span>上传文件</h3>
+    <form action="#" method="post" enctype="multipart/form-data">
+            <div>
+                <span>选择相册</span>
+                <select name="folderName" id="">
+                    <%for(var i=0;i< allAlbums.length;i++){%>
+                            <option value="<%= allAlbums[i] %>"><%= allAlbums[i]%></option>
+                    <%}%>
+                </select>
+            </div>
+            <div>
+                <input type="file" name="uploadFile" id="uploadFile">
+            </div>
+            <div>
+                <button type="submit">确定上传</button>
+            </div>
+    </form>
+</body>
+</html>

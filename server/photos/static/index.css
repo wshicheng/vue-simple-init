@@ -1,0 +1,9 @@
+*{margin:0;padding:0;}
+ul,li{float:left;list-style: none;}
+h3{line-height:40px;padding:0 15px;border-bottom: 1px dashed orange;margin-bottom: 20px;}
+ul{padding:0 15px;}
+li{float:left;margin-right:20px;margin-bottom:20px;}
+li i.iconfont{color:#FF9800;font-size:40px;}
+li a{display: block;text-align: center;font-size: 12px;}
+form{padding:0 10px;}
+form div{margin-bottom: 20px;}

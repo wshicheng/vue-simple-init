@@ -1,0 +1,13 @@
+app.js: 入口文件
+controller:控制台 、显示控制信息
+views: 资源文件 ejs模板
+modles:模型 处理业务逻辑
+uploads 上传目录的文件见
+public：公共资源、img、css、js
+node_modules：依赖模块
+职责化
+controller： 只负责方法的罗列
+models：负责业务逻辑的实现
+app.js入口文件
+views：静态资源
+强调一点：node是后端

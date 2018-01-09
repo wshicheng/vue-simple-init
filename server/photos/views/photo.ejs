@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="/index.css">
+    <link rel="stylesheet" href="//at.alicdn.com/t/font_397862_bo98w2izazlu9pb9.css">
+</head>
+<body>
+    <h3><a href="/">首页</a><span>&gt;</span><%=photoName%></h3>
+    <ul>
+        <%for(var i=0;i< allImages.length;i++){%>
+         <li>
+               <p>
+                    <a href="<%= './' + allImages[i]%>" >
+                        <img src="<%= './' + allImages[i]%>" alt="">
+                    </a>
+               </p>
+                <p>图片名称：<%=allImages[i]%></p>
+         </li>
+        <%}%> 
+    </ul>
+</body>
+</html>
